@@ -1,58 +1,75 @@
-let slideIndex = 1;
+let slideIndex = 0;
 
 function fillData () {
 
-    let ele = document.getElementById('slideshow-container');
+    controlIndex();
 
-    for(let i = 0 ; i<productos.length ; i++){
+    let ele = document.getElementById('contenedorImagen');
 
-        let innerDiv = document.createElement('div');
-        innerDiv.className = 'mySlides fade';
+    let innerDiv = document.createElement('div');
+    innerDiv.className = 'mySlides fade';
 
-        let numberDiv = document.createElement('div');
-        numberDiv.className = 'numbertext';
+    let numberDiv = document.createElement('div');
+    numberDiv.className = 'numbertext';
 
-        let image = document.createElement('img');
-        image.src = productos[i].urlImage;
+    let image = document.createElement('img');
+    image.className = 'image';
+    image.src = productos[slideIndex].urlImage;
 
-        let caption = document.createElement('div');
-        let content = document.createTextNode(productos[i].nombre_producto);
-        caption.appendChild(content);
-        caption.className = 'text';
+    let caption = document.getElementById('nombre');
+    let parrafo = document.createElement('p');
+    let content = document.createTextNode(productos[slideIndex].nombre_producto);
+    parrafo.appendChild(content);
+    caption.appendChild(parrafo);
 
-        innerDiv.appendChild(numberDiv);
-        innerDiv.appendChild(image);
-        innerDiv.appendChild(caption);
+    innerDiv.appendChild(numberDiv);
+    innerDiv.appendChild(image);
+    //innerDiv.appendChild(caption);
 
-        // The variable iDiv is still good... Just append to it.
-        ele.appendChild(innerDiv);
-
-    }
-
-    showSlides(slideIndex);
+    // The variable iDiv is still good... Just append to it.
+    ele.appendChild(innerDiv);
 
 }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function clearContainer(){
+
+    let e = document.getElementById('contenedorImagen');
+    var first = e.firstElementChild;
+    while (first) {
+        first.remove();
+        first = e.firstElementChild;
+    }
+
+    let caption = document.getElementById('nombre');
+    let texto = caption.firstElementChild;
+    texto.remove();
+
+}
+
+function plusSlides() {
+
+    slideIndex = 1 + slideIndex;
+    clearContainer();
+    fillData ();
+
+}
+
+function minusSlides() {
+
+    slideIndex = slideIndex - 1;
+    clearContainer();
+    fillData ();
+
 }
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-//   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-  slides[slideIndex-1].style.display = "block";  
-//   dots[slideIndex-1].className += " active";
+function controlIndex(){
+
+    if (slideIndex >= productos.length) {slideIndex = 0}    
+    if (slideIndex < 0) {slideIndex = productos.length - 1}
+
 }
+
