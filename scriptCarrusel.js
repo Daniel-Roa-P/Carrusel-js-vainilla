@@ -4,7 +4,7 @@ function fillData () {
 
     controlIndex();
 
-    let ele = document.getElementById('contenedorImagen');
+    let elemento = document.getElementById('contenedorImagen');
 
     let innerDiv = document.createElement('div');
     innerDiv.className = 'mySlides fade';
@@ -24,10 +24,8 @@ function fillData () {
 
     innerDiv.appendChild(numberDiv);
     innerDiv.appendChild(image);
-    //innerDiv.appendChild(caption);
-
-    // The variable iDiv is still good... Just append to it.
-    ele.appendChild(innerDiv);
+   
+    elemento.appendChild(innerDiv);
 
 }
 
@@ -48,17 +46,16 @@ function clearContainer(){
 
 function plusSlides() {
 
+    loading();
     slideIndex = 1 + slideIndex;
-    clearContainer();
-    fillData ();
+    
 
 }
 
 function minusSlides() {
 
+    loading();
     slideIndex = slideIndex - 1;
-    clearContainer();
-    fillData ();
 
 }
 
@@ -73,3 +70,20 @@ function controlIndex(){
 
 }
 
+function loading(){
+
+    let loader = document.getElementById("loader-container");
+    loader.style.display = "block";
+    setTimeout(() => {
+        loader.style.display = "none";
+        clearContainer();
+        fillData ();
+      }, 3000);
+
+}
+
+function getSlideIndex(){
+
+    return slideIndex;
+
+} 
