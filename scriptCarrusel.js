@@ -11,6 +11,7 @@ function fillData () {
 
     let numberDiv = document.createElement('div');
     numberDiv.className = 'numbertext';
+    numberDiv.textContent = " " + (slideIndex + 1) + " / " + productos.length;
 
     let image = document.createElement('img');
     image.className = 'image';

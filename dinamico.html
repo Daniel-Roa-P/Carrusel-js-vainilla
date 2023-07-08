@@ -11,14 +11,18 @@
     
     <body onload="fillData()">
         
+        <header class="cabecera"> 
+
+            <img class="logo" src = "imagenes/logo.png" ></img>
+
+        </header>
+
         <div id='slideshow-container' class="slideshow-container">
 
             <a class="prev" onclick="minusSlides()">❮</a>
             <a class="next" onclick="plusSlides()">❯</a>
             
-            <div id="loader-container" class="loader-container">
-                <div class="spinner"></div>
-            </div>
+            <div id="loader-container" class="loader-container"></div>
 
             <div id='container' class="container">
                 <div id='contenedorImagen' class="contenedorImagen">
@@ -37,7 +41,6 @@
 
         <div id="myModal" class="modal">
 
-            <!-- Modal content -->
             <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
@@ -47,7 +50,11 @@
 
                 <br>
 
-                <img id="image_modal" class="image_modal"></img>
+                <div class="container_image_modal">
+
+                    <img id="image_modal" class="image_modal"></img>
+
+                </div>
 
                 <br>
 
