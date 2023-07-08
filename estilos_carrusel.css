@@ -146,7 +146,8 @@ body {font-family: Verdana, sans-serif; background-color: rgb(6, 52, 63); margin
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 50px; /* Location of the box */
+    padding-bottom: 50px;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -203,10 +204,30 @@ body {font-family: Verdana, sans-serif; background-color: rgb(6, 52, 63); margin
     color: white;
   }
   
-  .modal-body {padding: 2px 16px;}
+  .modal-body {
+    padding: 2px 16px;
+    background-color: #b0ffb0;}
   
   .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+    text-align: center;
   }
+
+  #containerIntro h3,
+  #containerIntro p {
+    display: inline;
+    vertical-align: bottom;
+    line-height: 100%;
+}
+
+.image_modal{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 400px;
+
+}
