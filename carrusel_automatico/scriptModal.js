@@ -1,8 +1,6 @@
 let modal = document.getElementById("myModal");
-
-let detalles = document.getElementById("texto-detalles");
-
 let span = document.getElementsByClassName("close")[0];
+let detalles = document.getElementById("texto-detalles");
 
 detalles.onclick = function() {
 

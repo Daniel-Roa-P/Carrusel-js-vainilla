@@ -131,17 +131,6 @@ body {font-family: Verdana, sans-serif; background-color: rgb(6, 52, 63); margin
     cursor: pointer;
   }
 
-  .loader-container {
-    width: 300px;
-    height: 300px;
-    position: fixed;
-    background: rgba(0, 0, 0, 0.6)
-        url("https://media.giphy.com/media/8agqybiK5LW8qrG3vJ/giphy.gif") center
-        no-repeat;
-    z-index: 3;
-    display: none;
-}
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
