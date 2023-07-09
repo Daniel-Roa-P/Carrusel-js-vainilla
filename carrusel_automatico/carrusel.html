@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilos_carrusel.css">
+        <title>www.nuestra.co</title>
+    </head>
+    
+    <body onload="primeraCarga()">
+        
+        <header class="cabecera"> 
+
+            <img class="logo" src = "../imagenes/logo.png" ></img>
+
+        </header>
+
+        <div id='slideshow-container' class="slideshow-container">
+
+            <a class="prev" onclick="minusSlides()">❮</a>
+            <a class="next" onclick="plusSlides()">❯</a>
+            
+            <div id="loader-container" class="loader-container"></div>
+
+            <div id='container' class="container">
+                <div id='contenedorImagen' class="contenedorImagen"></div>
+                <div class="middle">
+                    <div id="texto-detalles" class="texto-detalles">Ver detalles</div>
+                </div>
+            </div>
+
+        </div>
+        
+        <br>
+
+        <div id="nombre" class="nombre" style="text-align:center"></div>
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="nombre_producto"></h2>
+            </div>
+            <div class="modal-body">
+
+                <br>
+
+                <div class="container_image_modal">
+
+                    <img id="image_modal" class="image_modal"></img>
+
+                </div>
+
+                <br>
+
+                <div id="containerIntro">
+                    <h3>Marca:</h3>
+                    <p id="marca"></p>
+                </div>
+
+                <br>
+
+                <div id="containerIntro">
+                    <h3>Drescripción del producto:</h3>
+                    <p id="description"></p>
+                </div>
+
+                <h3>Caracteristicas del producto:</h3>
+
+                <ul id="lista_caracteristicas" class="lista_caracteristicas"></ul>
+
+            </div>
+            <div class="modal-footer">
+                <h3 id="precio" class="precio" >Modal Footer</h3>
+            </div>
+            </div>
+        
+        </div>
+
+        <script src="productos.js" type="text/javascript"></script>
+        <script src="scriptCarrusel.js" type="text/javascript"></script>
+        <script src="scriptModal.js" type="text/javascript"></script>
+
+    </body>
+</html>
